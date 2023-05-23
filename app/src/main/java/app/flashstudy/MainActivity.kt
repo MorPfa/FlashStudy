@@ -4,7 +4,9 @@ import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.compose.material.ExperimentalMaterialApi
+import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Scaffold
+import androidx.compose.material.Surface
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
@@ -15,43 +17,47 @@ import app.flashstudy.navigation.Navigation
 import app.flashstudy.screens.DisplayFlashCards
 import app.flashstudy.ui.theme.FlashStudyTheme
 
+
+
 class MainActivity : ComponentActivity() {
     @ExperimentalMaterialApi
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
             FlashStudyTheme {
-                val navController = rememberNavController()
-                Scaffold(
-                    bottomBar = {
-                        BottomNavBar(
-                            items = listOf(
-                                BottomNavItem(
-                                    name = "Quiz",
-                                    route = "Quiz",
-                                    icon = R.drawable.nav_icon_quiz
+                Surface() {
+                    val navController = rememberNavController()
+                    Scaffold(
+                        bottomBar = {
+                            BottomNavBar(
+                                items = listOf(
+                                    BottomNavItem(
+                                        name = "Quiz",
+                                        route = "Quiz",
+                                        icon = R.drawable.nav_icon_quiz
+                                    ),
+                                    BottomNavItem(
+                                        name = "Questions",
+                                        route = "Questions",
+                                        icon = R.drawable.nav_icon_question,
+                                        badgeCount = 23
+                                    ),
+                                    BottomNavItem(
+                                        name = "Topics",
+                                        route = "Topics",
+                                        icon = R.drawable.nav_icon_topic,
+                                        badgeCount = 214
+                                    ),
                                 ),
-                                BottomNavItem(
-                                    name = "Questions",
-                                    route = "Questions",
-                                    icon = R.drawable.nav_icon_question,
-                                    badgeCount = 23
-                                ),
-                                BottomNavItem(
-                                    name = "Topics",
-                                    route = "Topics",
-                                    icon = R.drawable.nav_icon_topic,
-                                    badgeCount = 214
-                                ),
-                            ),
-                            navController = navController,
-                            onItemClick = {
-                                navController.navigate(it.route)
-                            }
-                        )
+                                navController = navController,
+                                onItemClick = {
+                                    navController.navigate(it.route)
+                                }
+                            )
+                        }
+                    ) {
+                        Navigation(navController = navController)
                     }
-                ) {
-                    Navigation(navController = navController)
                 }
             }
         }

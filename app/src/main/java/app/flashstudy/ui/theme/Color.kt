@@ -2,7 +2,12 @@ package app.flashstudy.ui.theme
 
 import androidx.compose.ui.graphics.Color
 
-val Purple200 = Color(0xFFBB86FC)
-val Purple500 = Color(0xFF6200EE)
-val Purple700 = Color(0xFF3700B3)
-val Teal200 = Color(0xFF03DAC5)
+val DarkPurple = Color(0xFF160C28)
+val RichDark = Color(0xFF000411)
+val NaplesYellow = Color(0xFFEFCB68)
+val DarkViolet = Color(0xFF77567A)
+
+
+val Violet = Color(0xFF7A6174)
+val CoolGray = Color(0xFF9B9FB5)
+val RoseQuartz = Color(0xFFBFB0BA)

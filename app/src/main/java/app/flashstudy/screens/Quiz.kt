@@ -41,6 +41,8 @@ fun DisplayFlashCards() {
                         .weight(1f)
                         .widthIn(min = 30.dp)
                         .padding(end = 10.dp)
+
+
                 ) {
                     Text(text = stringResource(R.string.next_card_button))
                 }
@@ -51,21 +53,21 @@ fun DisplayFlashCards() {
                         .widthIn(min = 30.dp)
                         .padding(start = 10.dp)
                 ) {
-                    Text(text = stringResource(R.string.Mark_question))
+                    Text(text = stringResource(R.string.Previous_Card))
                 }
             }
-            
+
         }
     }
 
 
-    }
+}
 
 
 @Composable
 fun FlashCardQuestionSide(
-topic: String,
-question: String,
+    topic: String,
+    question: String,
 ){
 
 }

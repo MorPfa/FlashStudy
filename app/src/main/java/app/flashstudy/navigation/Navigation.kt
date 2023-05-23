@@ -47,7 +47,6 @@ fun BottomNavBar(
     val backStackEntry = navController.currentBackStackEntryAsState()
     BottomNavigation(
         modifier = modifier,
-        backgroundColor = Color.Blue,
         elevation = 5.dp
     ) {
         items.forEach { item ->
@@ -55,7 +54,7 @@ fun BottomNavBar(
             BottomNavigationItem(
                 selected = selected,
                 onClick = { onItemClick(item) },
-                selectedContentColor = Color.Green,
+                selectedContentColor = Color.Black,
                 unselectedContentColor = Color.Gray,
                 icon = {
                     Column(horizontalAlignment = CenterHorizontally) {

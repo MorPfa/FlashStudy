@@ -4,9 +4,7 @@ import androidx.compose.animation.core.animateFloat
 import androidx.compose.animation.core.tween
 import androidx.compose.animation.core.updateTransition
 import androidx.compose.foundation.clickable
-import androidx.compose.foundation.layout.Arrangement
-import androidx.compose.foundation.layout.Column
-import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.*
 import androidx.compose.material.Card
 import androidx.compose.material.Text
 import androidx.compose.runtime.*
@@ -42,13 +40,14 @@ fun AnimatingBox(
     )
     Card(
         Modifier
-            .fillMaxSize(.5f)
+            .fillMaxWidth(.9f).
+                fillMaxHeight(.5f)
             .graphicsLayer {
                 rotationY = transitionData.rotation
                 cameraDistance = 8 * density
             }
             .clickable { onRotate(!rotated) },
-        backgroundColor = Color.Blue
+
     )
     {
         Column(
