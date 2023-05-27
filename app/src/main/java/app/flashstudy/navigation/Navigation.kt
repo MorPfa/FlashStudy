@@ -16,9 +16,9 @@ import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.currentBackStackEntryAsState
-import app.flashstudy.QuestionsScreen
+import app.flashstudy.screens.QuestionsScreen
 import app.flashstudy.screens.QuizScreen
-import app.flashstudy.TopicsScreen
+import app.flashstudy.screens.TopicsScreen
 import app.flashstudy.R
 
 
