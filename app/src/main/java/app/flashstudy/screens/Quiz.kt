@@ -1,7 +1,10 @@
 package app.flashstudy.screens
 
+import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
 import androidx.compose.material.Button
+import androidx.compose.material.ButtonDefaults
+import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Text
 import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
@@ -15,7 +18,14 @@ import app.flashstudy.cards.AnimatingBox
 
 @Composable
 fun QuizScreen() {
-    DisplayFlashCards()
+    Box(
+        modifier = Modifier
+            .fillMaxSize()
+            .background(MaterialTheme.colors.primary)
+    ) {
+        DisplayFlashCards()
+    }
+
 }
 
 @Composable
@@ -40,20 +50,23 @@ fun DisplayFlashCards() {
                     modifier = Modifier
                         .weight(1f)
                         .widthIn(min = 30.dp)
-                        .padding(end = 10.dp)
+                        .padding(end = 10.dp),
+                    colors = ButtonDefaults.buttonColors(backgroundColor = MaterialTheme.colors.secondary)
+
 
 
                 ) {
-                    Text(text = stringResource(R.string.next_card_button))
+                    Text(text = stringResource(R.string.next_card_button), color = MaterialTheme.colors.onPrimary)
                 }
                 Button(
                     onClick = { /*TODO*/ },
                     modifier = Modifier
                         .weight(1f)
                         .widthIn(min = 30.dp)
-                        .padding(start = 10.dp)
+                        .padding(end = 10.dp),
+                    colors = ButtonDefaults.buttonColors(backgroundColor = MaterialTheme.colors.secondary)
                 ) {
-                    Text(text = stringResource(R.string.Previous_Card))
+                    Text(text = stringResource(R.string.Previous_Card), color = MaterialTheme.colors.onPrimary)
                 }
             }
 
@@ -62,24 +75,6 @@ fun DisplayFlashCards() {
 
 
 }
-
-
-@Composable
-fun FlashCardQuestionSide(
-    topic: String,
-    question: String,
-){
-
-}
-
-@Composable
-fun FlashCardAnswerSide(
-    topic: String,
-    answer: String,
-){
-
-}
-
 
 
 @Preview(showSystemUi = true)

@@ -20,6 +20,8 @@ import app.flashstudy.screens.QuestionsScreen
 import app.flashstudy.screens.QuizScreen
 import app.flashstudy.screens.TopicsScreen
 import app.flashstudy.R
+import app.flashstudy.ui.theme.RussianViolet
+import app.flashstudy.ui.theme.UltraViolet
 
 
 @Composable
@@ -46,6 +48,7 @@ fun BottomNavBar(
 ) {
     val backStackEntry = navController.currentBackStackEntryAsState()
     BottomNavigation(
+        backgroundColor = MaterialTheme.colors.primaryVariant,
         modifier = modifier,
         elevation = 5.dp
     ) {
@@ -54,8 +57,8 @@ fun BottomNavBar(
             BottomNavigationItem(
                 selected = selected,
                 onClick = { onItemClick(item) },
-                selectedContentColor = Color.Black,
-                unselectedContentColor = Color.Gray,
+                selectedContentColor = Color.Gray,
+                unselectedContentColor = MaterialTheme.colors.onPrimary,
                 icon = {
                     Column(horizontalAlignment = CenterHorizontally) {
 

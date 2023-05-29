@@ -2,10 +2,7 @@
 <resources>
 
     <style name="Theme.FlashStudy" parent="android:Theme.Material.Light.NoActionBar">
-        <item name="android:statusBarColor">@color/statusBarColor</item>
-    </style>
-    <style name="Theme.FlashStudy.Dark" parent="android:Theme.Material.NoActionBar">
-        <item name="android:statusBarColor">@color/statusBarColorDark</item>
+        <item name="android:statusBarColor">@color/transparent</item>
     </style>
 
 

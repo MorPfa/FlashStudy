@@ -6,6 +6,7 @@ import androidx.compose.animation.core.updateTransition
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.*
 import androidx.compose.material.Card
+import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Text
 import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
@@ -31,7 +32,8 @@ private class TransitionData(
 
 @Composable
 fun AnimatingBox(
-    rotated: Boolean,modifier: Modifier,
+    rotated: Boolean,
+    modifier: Modifier,
     onRotate: (Boolean) -> Unit
 
 ) {
@@ -46,7 +48,7 @@ fun AnimatingBox(
                 rotationY = transitionData.rotation
                 cameraDistance = 8 * density
             }
-            .clickable { onRotate(!rotated) },
+            .clickable { onRotate(!rotated) }, backgroundColor = MaterialTheme.colors.background
 
     )
     {
