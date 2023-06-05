@@ -31,7 +31,7 @@ fun Navigation(navController: NavHostController) {
             QuizScreen()
         }
         composable("Questions") {
-            QuestionsScreen()
+            QuestionsScreen(modifier = Modifier)
         }
         composable("Topics") {
             TopicsScreen()
